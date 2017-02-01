@@ -488,7 +488,7 @@ Player.prototype.promptDone = function() {
 
 Player.prototype.prompt = function() {
     //check if property
-    $('#currentSquare').text(g.board[this.location].name);
+    // $('#currentSquare').text(g.board[this.location].name);
     if (g.board[this.location].constructor === Property) {
         if (g.board[this.location].ownedByPlayerIndex >= 0) {
             this.payRent();
@@ -734,7 +734,7 @@ Player.prototype.payRent = function() {
 Player.prototype.buyPrompt = function() {
     //show buy button
     if (!(g.board[this.location].isOwned)) {
-        $('#buyButton').removeClass('disabled');
+        // $('#buyButton').removeClass('disabled');
     }
 }
 
@@ -878,7 +878,7 @@ Game.prototype.nextPlayer = function() {
         this.cpi = 0;
     }
     //re-enable roll dice button for next player
-    $('#rollButton').removeClass('disabled');
+    // $('#rollButton').removeClass('disabled');
     console.log('next player run');
 }
 
@@ -1180,11 +1180,12 @@ function drawPlayers() {
 
 
 function hb() {
-    var source = $("#player-list").html();
-    var template = Handlebars.compile(source);
-    var context = g.players;
-    var html = template(context);
-    $('#template-dump').html(html);
+    //edit d
+    // var source = $("#player-list").html();
+    // var template = Handlebars.compile(source);
+    // var context = g.players;
+    // var html = template(context);
+    // $('#template-dump').html(html);
 }
 
 
