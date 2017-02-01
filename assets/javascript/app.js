@@ -18,7 +18,7 @@ var currentXHouse = 955;
 var currentYHouse = 1054;
 
 
-
+console.log('app.js init');
 
 
 
