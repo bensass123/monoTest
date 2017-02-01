@@ -4,6 +4,7 @@
 var g;
 //dice roll
 var total;
+var roll = true;
 
 //starting positions for all pieces
 var currentXRect = 1130;
@@ -17,11 +18,42 @@ var currentYRect3 = 1150;
 var currentXHouse = 955;
 var currentYHouse = 1054;
 
+// Shorthand for $( document ).ready()
+$(function() {
+    console.log('app.js init');
+    //listeners
+    $('#dice-button').click(function(){
+        if (roll) {
+            setNextButton();
+            roll = false;
+        }
+        else {
+            setRollButton();
+            roll = true;
+        }
+    });
+});
 
-console.log('app.js init');
 
+function setRollButton(){
+    $('#dice-button').css({
+        background: 'blue',
+        backgroundImage: 'url("assets/images/dice.svg")',
+        backgroundImage: 'url("assets/images/dice.svg"), -moz-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%)', /* FF3.6-15 */
+        backgroundImage: 'url("assets/images/dice.svg"), -webkit-linear-gradient(top, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 39%,rgba(44,44,44,1) 50%,rgba(0,0,0,1) 51%,rgba(17,17,17,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%)', /* Chrome10-25,Safari5.1-6 */
+        backgroundImage: 'url("assets/images/dice.svg"), linear-gradient(to bottom, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 39%,rgba(44,44,44,1) 50%,rgba(0,0,0,1) 51%,rgba(17,17,17,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%)', /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ 
+        backgroundRepeat: "no-repeat",
+        backgroundSize: 'contain'
 
+    });
 
+    $('#dice-button').text('Roll');
+}
+
+function setNextButton(){
+    $('#dice-button').css('background', 'red');
+    $('#dice-button').text('End Turn');
+}
 
 
 //shuffles an array
