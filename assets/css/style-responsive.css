@@ -11,6 +11,13 @@ body {
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) { 
+	
+}
+ 
+
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+
 	body{
 		font-style: italic;
 		overflow: hidden;
@@ -32,11 +39,6 @@ body {
 	#dice-button{
 		
 	}
-}
- 
-
-/* Landscape phones and down */
-@media (max-width: 480px) { 
 
 
 }

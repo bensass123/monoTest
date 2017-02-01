@@ -371,3 +371,11 @@ Player.prototype.moveBack3 = function() {
         this.location = temp + 40;
     }
 }
+
+window.addEventListener("load",function() {
+    // Set a timeout...
+    setTimeout(function(){
+        // Hide the address bar!
+        window.scrollTo(0, 1);
+    }, 0);
+});
